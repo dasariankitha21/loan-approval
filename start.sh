@@ -1,3 +1,4 @@
 #!/bin/sh
-cd loanapproval
-exec gunicorn loanapproval.wsgi:application --bind 0.0.0.0:$PORT
+set -e
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec gunicorn --chdir "$DIR/loanapproval" loanapproval.wsgi:application --bind 0.0.0.0:$PORT
