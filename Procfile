@@ -1,0 +1,1 @@
+web: gunicorn loanapproval.wsgi:application --log-file -
