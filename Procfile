@@ -1,1 +1,1 @@
-web: gunicorn loanapproval.wsgi:application --log-file -
+web: cd loanapproval && exec gunicorn loanapproval.wsgi:application --bind 0.0.0.0:$PORT
